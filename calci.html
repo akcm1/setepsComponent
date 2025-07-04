@@ -1,0 +1,528 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMO Finance - Mutual Fund Simplified</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    body {
+      background: #0F0F1A;
+      color: white;
+    }
+    .hero-wrapper {
+      background: url('b1.jpg') no-repeat center center/cover;
+    }
+    header {
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      position: ;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      transition: background 0.4s ease;
+      background: transparent;
+    }
+    header.scrolled {
+      background: linear-gradient(145deg, #19002d, #310057);
+    }
+    header h1 {
+      font-size: 2rem;
+      color: #fff;
+    }
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+    nav a {
+      position: relative;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #fff;
+      bottom: -4px;
+      left: 0;
+      transition: 0.4s ease;
+    }
+    nav a:hover {
+      color: linear-gradient(145deg, #19002d, #310057);
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 120px 50px 80px;
+      min-height: 100vh;
+    }
+    .hero-text {
+      flex: 1;
+      max-width: 50%;
+      animation: slideInLeft 1s ease-out;
+    }
+    .hero-text h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+    .hero-text button {
+      padding: 12px 30px;
+      background: #C070FF;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .hero-text button:hover {
+      background: linear-gradient(145deg, #19002d, #310057);
+      transform: scale(1.05);
+    }
+    .hero-image {
+      flex: 1;
+      max-width: 50%;
+      text-align: right;
+      animation: slideInRight 1s ease-out;
+    }
+    .hero-image img {
+      width: 90%;
+      /* border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); */
+    }
+    @keyframes slideInLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .feature-card {
+    background: linear-gradient(145deg, #19002d, #310057);
+    color: #fff;
+    border-radius: 15px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 0 0 transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .feature-card:hover {
+    box-shadow: 0 0 20px rgba(143, 0, 255, 0.6), 0 0 40px rgba(49, 0, 87, 0.4);
+    transform: translateY(-6px);
+  }
+
+  .feature-card h4::before {
+    content: attr(data-icon);
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .feature-card p {
+    font-size: 0.95em;
+    color: #f0f0f0;
+  }
+
+  .features {
+    background-color: #000000;
+    padding: 10px 20px;
+  }
+
+  .features h3 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+    .calculator-embed {
+      flex: 0 0 640px;
+    }
+     .calculator-embed iframe {
+    width: 100%;
+    height: 100px;
+    border: none;
+    background: #f4e1ff;
+    border-radius: 15px;
+  }
+.credit-check {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('b1.jpg') no-repeat center center/cover;
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .credit-check h3 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: fangsong;
+  }
+
+  .credit-check .input-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .credit-check input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    width: 250px;
+    font-size: 1em;
+  }
+
+  .credit-check button {
+    padding: 10px 20px;
+    background-color: #8f00ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .chart-container {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .score-range {
+    width: 100%;
+    font-size: 1em;
+    color: #bbb;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    margin-top: 5px;
+  }
+
+  .credit-label {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  #scoreText {
+    font-size: 1.4em;
+    margin-top: 10px;
+    color: #ffffff;
+  }
+
+    .finance-metrics {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 0;
+  }
+
+  .metric-card {
+    background: #ffffff;
+    color: #181828;
+    border-radius: 12px;
+    padding: 20px 30px;
+    text-align: center;
+    min-width: 180px;
+    box-shadow: 0 0 12px rgba(143, 0, 255, 0.2);
+  }
+
+  .metric-card h4 {
+    font-size: 1.8em;
+    margin: 10px 0 5px;
+    color: #8f00ff;
+  }
+
+  .metric-card p {
+    font-size: 0.9em;
+    margin: 0;
+    color: #444;
+  }
+
+  .metric-card span {
+    font-size: 2em;
+    display: block;
+    margin-bottom: 5px;
+  }
+element.style {
+    width: 313%;
+    background: #181828;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0F0F1A;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-wrapper">
+    <header id="main-header">
+      <h1>AMO Finance</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#features">Features</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Grow Your Wealth Smartly</h2>
+        <p>Use our Mutual Fund SIP calculator and take control of your investments.</p>
+        <button>Start Investing</button>
+      </div>
+      <div class="hero-image">
+        <!-- <img src="money.png" alt="Finance Illustration"> -->
+      </div>
+    </section>
+  </div>
+
+<section class="features" id="features">
+  <h3>Why Choose AMO Finance?</h3>
+  <div class="feature-combo" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start;">
+    <div class="feature-grid" style="flex: 2;">
+      <div class="feature-card" data-icon="🚀">
+        <h4 data-icon="🚀">Fast & Accurate SIP Tools</h4>
+        <p>Plan your investment with real-time return projections and growth forecasts.</p>
+      </div>
+      <div class="feature-card" data-icon="📈">
+        <h4 data-icon="📈">Data-Driven Insights</h4>
+        <p>Get market trends, expert recommendations, and personalized tips.</p>
+      </div>
+      <div class="feature-card" data-icon="🔐">
+        <h4 data-icon="🔐">Secure & Private</h4>
+        <p>Your financial data is encrypted and protected at every step.</p>
+      </div>
+      <div class="feature-card" data-icon="📊">
+        <h4 data-icon="📊">Performance Tracker</h4>
+        <p>Track and compare the growth of your mutual funds in one dashboard.</p>
+      </div>
+      <div class="feature-card" data-icon="💬">
+        <h4 data-icon="💬">Expert Chat Support</h4>
+        <p>Connect with our team for any investment-related queries 24/7.</p>
+      </div>
+      <div class="feature-card" data-icon="💡">
+        <h4 data-icon="💡">Learning Hub</h4>
+        <p>Explore guides, blogs and videos to enhance your financial literacy.</p>
+      </div>
+      <!-- Inserted TradingView chart in the empty space -->
+      <div style="width:313%; background: #181828; margin-top: 30px; padding: 20px; border-radius: 10px;">
+        <iframe 
+          src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_f8de4&symbol=NSE:NIFTY&interval=1D&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=[]&theme=dark&style=1&timezone=Asia%2FKolkata&withdateranges=1&hideideas=1&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en"
+          width="100%" height="350" frameborder="0" allowtransparency="true" scrolling="no"
+          style="border-radius: 0;">
+        </iframe>
+      </div>
+    </div>
+    <div class="calculator-embed" style="flex: 1; min-width: 200px;">
+      <iframe src="1js.html" style="width: 100%; height: 100%; min-height: 900px; border: none; border-radius: 15px; background: #f4e1ff; box-shadow: 0 0 15px rgba(143, 0, 255, 0.3);"></iframe>
+    </div>
+  </div>
+</section>
+
+
+<section class="finance-metrics" id="metricsSection">
+  <div class="metric-card">
+    <span>💼</span>
+    <h4 id="portfolioCount">0</h4>
+    <p>Portfolios Managed</p>
+  </div>
+  <div class="metric-card">
+    <span>📊</span>
+    <h4 id="assetsCount">₹0</h4>
+    <p>Assets Under Advice</p>
+  </div>
+  <div class="metric-card">
+    <span>🧑‍💻</span>
+    <h4 id="usersCount">0</h4>
+    <p>Active Users</p>
+  </div>
+  <div class="metric-card">
+    <span>🌍</span>
+    <h4 id="countriesCount">0</h4>
+    <p>Countries Reached</p>
+  </div>
+</section>
+
+<script>
+  function countUp(elementId, target, suffix = '', prefix = '', duration = 1500) {
+    const el = document.getElementById(elementId);
+    let start = 0;
+    const increment = Math.ceil(target / (duration / 30));
+    const counter = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        start = target;
+        clearInterval(counter);
+      }
+      el.textContent = prefix + start.toLocaleString() + suffix;
+    }, 30);
+  }
+
+  let metricsAnimated = false;
+  function animateMetricsIfInView() {
+    const section = document.getElementById('metricsSection');
+    const rect = section.getBoundingClientRect();
+    if (!metricsAnimated && rect.top < window.innerHeight && rect.bottom >= 0) {
+      countUp("portfolioCount", 1250);
+      countUp("assetsCount", 80, 'Cr+', '₹');
+      countUp("usersCount", 9300, '+');
+      countUp("countriesCount", 34);
+      metricsAnimated = true;
+    }
+  }
+
+  window.addEventListener('scroll', animateMetricsIfInView);
+  window.addEventListener('load', animateMetricsIfInView);
+</script>
+
+
+
+<section class="credit-check">
+  <div class="credit-label" id="scoreLabel"></div>
+  <h3>Your credit score is</h3>
+  <div class="input-row">
+    <input type="text" id="accountInput" maxlength="10" placeholder="Enter 10-digit Account Number">
+    <button onclick="showCreditScore()">Check Score</button>
+    <div class="chart-container">
+      <canvas id="creditChart"></canvas>
+      <div class="score-range">
+        <span>500</span>
+        <span>850</span>
+      </div>
+      <div id="scoreText"></div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  let creditChart = null;
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const ctx = document.getElementById('creditChart')?.getContext('2d');
+    if (ctx) {
+      creditChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Credit Score', 'Remaining'],
+          datasets: [{
+            data: [0, 850],
+            backgroundColor: ['#8f00ff', '#ccc'],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          rotation: -90,
+          circumference: 180,
+          cutout: '65%',
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+    }
+  });
+
+  function showCreditScore() {
+    const input = document.getElementById('accountInput').value;
+    const scoreText = document.getElementById('scoreText');
+    const scoreLabel = document.getElementById('scoreLabel');
+
+    const isValid = /^\d{10}$/.test(input);
+    if (!isValid) {
+      alert('Please enter a valid 10-digit account number.');
+      scoreText.textContent = '';
+      scoreLabel.textContent = '';
+      return;
+    }
+
+    const score = Math.floor(Math.random() * 301) + 500;
+    scoreText.textContent = `Your credit score is ${score}`;
+
+    let label = '';
+    if (score >= 750) label = 'Excellent!';
+    else if (score >= 700) label = 'Good';
+    else if (score >= 650) label = 'Fair';
+    else label = 'Poor';
+    scoreLabel.textContent = label;
+
+    if (creditChart) {
+      creditChart.data.datasets[0].data = [score, 850 - score];
+      creditChart.update();
+    }
+  }
+</script>
+
+
+
+
+  <footer>
+    &copy; 2025 AMO Finance. All rights reserved.
+  </footer>
+
+  <script>
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
